@@ -36,8 +36,6 @@ class Game
         break if yield
       end
     end
-    
-    print_stats
   end
 
   def print_stats

@@ -33,8 +33,6 @@ class Game
         GameTurn.take_turn(player)
       end
     end
-    
-    print_stats
   end
 
   def print_stats
