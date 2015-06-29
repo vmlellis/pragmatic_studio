@@ -32,6 +32,9 @@ class Game
       @players.each do |player|
         GameTurn.take_turn(player)
       end
+      if block_given?
+        break if yield
+      end
     end
     
     print_stats
@@ -41,14 +44,6 @@ class Game
     strong_players, winpy_players = @players.partition { |player| player.strong? }
 
     puts "\n#{@title} Statistics:"
-
-    @players.each do |player|
-      puts "\n#{player.name}'s point totals:"
-      player.found_treasures.each do |name, points|
-        puts "#{points} total #{name} points"
-      end
-      puts "#{player.points} grand total points"
-    end
 
     puts "\n#{strong_players.length} strong players:"
     strong_players.each do |player|
@@ -65,6 +60,16 @@ class Game
     @players.sort.each do |player|
       player.print_name_and_score
     end
+
+    @players.each do |player|
+      puts "\n#{player.name}'s point totals:"
+      player.each_found_treasure do |treasure|
+        puts "#{treasure.points} total #{treasure.name} points"
+      end
+      puts "#{player.points} grand total points"
+    end
+
+    puts "\n#{total_points} total points from treasures found"
 
   end
 
