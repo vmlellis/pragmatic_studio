@@ -4,12 +4,12 @@ class Player
   attr_reader :health
 
   def initialize(name, health=100)
-  	@name = name.capitalize
-  	@health = health
+    @name = name.capitalize
+    @health = health
   end
 
   def score
-  	@name.length + @health
+    @name.length + @health
   end
 
   def blam
@@ -23,34 +23,34 @@ class Player
   end
 
   def to_s
-  	"I'm  #{@name} with a health of #{@health} and score of #{score}"
+    "I'm  #{@name} with a health of #{@health} and score of #{score}"
   end
 end
 
 
 # Game class
 class Game
-	attr_reader :title
+  attr_reader :title
 
-	def initialize(title)
-		@title = title
-		@players = []
-	end
+  def initialize(title)
+    @title = title
+    @players = []
+  end
 
-	def add_player(player)
-		@players.push(player)
-	end
+  def add_player(player)
+    @players.push(player)
+  end
 
-	def play
-		puts "There are #{@players.size} players in #{@title}"
-		puts @players
-		@players.each do |player|
-			player.blam
-			player.w00t
-			player.w00t
-			puts player
-		end
-	end
+  def play
+    puts "There are #{@players.size} players in #{@title}"
+    puts @players
+    @players.each do |player|
+      player.blam
+      player.w00t
+      player.w00t
+      puts player
+    end
+  end
 end
 
 # Initialize game

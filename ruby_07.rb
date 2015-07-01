@@ -41,6 +41,6 @@ puts player3
 # 4. (Instance) methods have access to their object's (instance) variables.
 # 5. Class names start with an (uppercase) letter.
 #    Method names start with a (lowercase) letter.
-#    Variable names start with a (lowecase) letter.
+#    Variable names start with a (lowercase) letter.
 #    Instances variables start with an (@ sign).
 

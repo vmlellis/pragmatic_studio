@@ -11,6 +11,7 @@ describe Treasure do
   it "create a treasure with a name" do
     @treasure.name.should == @treasure_name
   end
+  
   it "create a treasure with point" do
     @treasure.points.should == @treasure_points
   end
