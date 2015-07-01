@@ -1,4 +1,4 @@
-require'studio_game/rspec_helper'
+require_relative 'rspec_helper'
 require 'studio_game/berserk_player'
 require 'studio_game/treasure_trove'
 
@@ -7,6 +7,8 @@ module StudioGame
     before do
       @initial_health = 50
       @player = BerserkPlayer.new("berserker", @initial_health)
+
+      $stdout = StringIO.new # Suppress puts
     end
 
     it "does not go berserk when w00ted up to 5 times" do

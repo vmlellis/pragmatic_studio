@@ -12,6 +12,8 @@ module StudioGame
       @game.add_player(@player)
 
       @stub = Die.any_instance.stub(:roll)
+      
+      $stdout = StringIO.new # Suppress puts
     end
 
     it "roll a high number" do

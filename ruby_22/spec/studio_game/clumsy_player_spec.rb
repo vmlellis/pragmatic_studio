@@ -1,4 +1,4 @@
-require 'studio_game/rspec_helper'
+require_relative 'rspec_helper'
 require 'studio_game/clumsy_player'
 require 'studio_game/treasure_trove'
 

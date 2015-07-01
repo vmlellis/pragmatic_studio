@@ -1,4 +1,4 @@
-require 'studio_game/rspec_helper'
+require_relative 'rspec_helper'
 require 'studio_game/player'
 require 'studio_game/treasure_trove'
 
@@ -7,6 +7,8 @@ module StudioGame
     before do
       @initial_health = 150
       @player = Player.new("larry", @initial_health)
+      
+      $stdout = StringIO.new # Suppress puts
     end
 
     it "has a capitalized name" do
